@@ -2013,6 +2013,7 @@ local Logo = Instance.new("ImageLabel")
 end
 return uitab
 end
+
 ---- Káº¿t KhÃºc Ui
 
 function intiAppleHub() 
@@ -2898,14 +2899,14 @@ function UpdateFlowerChams()
 						name.TextYAlignment = 'Top'
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
-						name.TextColor3 = Color3.fromRGB(111, 0, 255)
+						name.TextColor3 = Color3.fromRGB(255, 0, 0)
 						if v.Name == "Flower1" then 
 							name.Text = ("Blue Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
 							name.TextColor3 = Color3.fromRGB(0, 0, 255)
 						end
 						if v.Name == "Flower2" then
 							name.Text = ("Red Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
-							name.TextColor3 = Color3.fromRGB(111, 0, 255)
+							name.TextColor3 = Color3.fromRGB(255, 0, 0)
 						end
 					else
 						v['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
@@ -2938,7 +2939,7 @@ function UpdateRealFruitChams()
 					name.TextYAlignment = 'Top'
 					name.BackgroundTransparency = 1
 					name.TextStrokeTransparency = 0.5
-					name.TextColor3 = Color3.fromRGB(111, 0, 255)
+					name.TextColor3 = Color3.fromRGB(255, 0, 0)
 					name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
 				else
 					v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..' '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
@@ -3191,14 +3192,14 @@ function UpdateFlowerChams()
 						name.TextYAlignment = 'Top'
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
-						name.TextColor3 = Color3.fromRGB(111, 0, 255)
+						name.TextColor3 = Color3.fromRGB(255, 0, 0)
 						if v.Name == "Flower1" then 
 							name.Text = ("Blue Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
 							name.TextColor3 = Color3.fromRGB(0, 0, 255)
 						end
 						if v.Name == "Flower2" then
 							name.Text = ("Red Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
-							name.TextColor3 = Color3.fromRGB(111, 0, 255)
+							name.TextColor3 = Color3.fromRGB(255, 0, 0)
 						end
 					else
 						v['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
@@ -3231,7 +3232,7 @@ function UpdateRealFruitChams()
 					name.TextYAlignment = 'Top'
 					name.BackgroundTransparency = 1
 					name.TextStrokeTransparency = 0.5
-					name.TextColor3 = Color3.fromRGB(111, 0, 255)
+					name.TextColor3 = Color3.fromRGB(255, 0, 0)
 					name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
 				else
 					v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..' '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
@@ -3922,7 +3923,9 @@ getgenv().HyperCahayas = function(p)
     end)
     
 
-local Library = Update:Window("TienTiny.Space","",Enum.KeyCode.RightControl);
+local Library = Update:Window("Project Spectrum","",Enum.KeyCode.RightControl);
+
+local NguyenTien = Library:AddTab("Spectrum","0")
 local Main = Library:AddTab("General","16928730547")
 local M = Library:AddTab("Items","16928734199")
 local Ss = Library:AddTab("Stats Details","16928732190")
@@ -3933,13 +3936,39 @@ local T = Library:AddTab("Teleport","16928735724")
 local S = Library:AddTab("Shop","16928742076")
 local D = Library:AddTab("Devil Fruit","16928737125")
 local Misc = Library:AddTab("Misc","16928743419")
----------------------------------------------------
+--- ThÃ´ng Tin
+NguyenTien:AddSeperator("Spectrum Detaiils")
+NguyenTien:AddLabel("Founder: xZPUHigh (ZPU)")
+NguyenTien:AddLabel("Developer: Vxc4s (Main), Federal & mJayR (Support Code)")
+NguyenTien:AddLabel("Interface UI: French Dog & Sally")
+NguyenTien:AddLabel("Hey! Join us Discord For Benefit & News!")
+
+NguyenTien:AddSeperator("Social Network")
+NguyenTien:AddButton("Discord Server",function()
+setclipboard("https://discord.gg/zpu")
+Notif.New("Copying To Clipboard Done", 3)
+end)
+NguyenTien:AddButton("YouTube",function()
+setclipboard("https://youtube.com/@xZPUHigh")
+Notif.New("Copying To Clipboard Doneð", 3)
+end)
+NguyenTien:AddButton("Facebook",function()
+setclipboard("https://www.facebook.com/zpu.mnn2")
+Notif.New("Copying To Clipboard Done", 3)
+end)
+NguyenTien:AddButton("Instagram",function()
+    setclipboard("https://www.instagram.com/zpu.mnn2")
+    Notif.New("Copying To Clipboard Done", 3)
+    end)
+---- Trang Chá»§
 Main:AddSeperator("Farm Settings")
+
 local WeaponList = {"Melee","Sword","Fruit","Gun"}
 _G.SelectWeapon = "Melee"
 Main:AddDropdown("Select Weapon",WeaponList,function(value)
 _G.SelectWeapon = value
 end)
+
 task.spawn(function()
 	while wait() do
 		pcall(function()
@@ -4760,7 +4789,7 @@ spawn(function()
     end
 end)
 
-    Main:AddToggle("Fast Attack [ SUPER OP ]",false,function(value)
+    Main:AddToggle("HyperSonic [ SUPER OP ]",false,function(value)
        _G.HyperSonic = value
     end)      
     
@@ -5366,9 +5395,9 @@ end)
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-    Mirragecheck:Set('✅: Mystic Island Spawning')
+    Mirragecheck:Set('ðŸï¸: Mystic Island Spawning')
     else
-      Mirragecheck:Set('❌: Mystic Island Not Found ' )end
+      Mirragecheck:Set('âŒ: Mystic Island Not Found ' )end
             end
         end)
 end)
@@ -5845,7 +5874,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Superhuman" ,
-							Icon = "http://www.roblox.com/asset/?id=16294367640",
+							Icon = "http://www.roblox.com/asset/?id=15435099885",
 							Duration = 2.5
 						})
 					end
@@ -5857,7 +5886,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Death Step" ,
-							Icon = "http://www.roblox.com/asset/?id=16294367640",
+							Icon = "http://www.roblox.com/asset/?id=15435099885",
 							Duration = 2.5
 						})
 					end
@@ -5869,7 +5898,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have SharkMan Karate" ,
-							Icon = "http://www.roblox.com/asset/?id=16294367640",
+							Icon = "http://www.roblox.com/asset/?id=15435099885",
 							Duration = 2.5
 						})
 					end
@@ -5881,7 +5910,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Electric Claw" ,
-							Icon = "http://www.roblox.com/asset/?id=16294367640",
+							Icon = "http://www.roblox.com/asset/?id=15435099885",
 							Duration = 2.5
 						})
 					end
@@ -5891,7 +5920,7 @@ spawn(function()
 								game.StarterGui:SetCore("SendNotification", {
 									Title = "Notification", 
 									Text = "Not Have Enough Material" ,
-									Icon = "http://www.roblox.com/asset/?id=16294367640",
+									Icon = "http://www.roblox.com/asset/?id=15435099885",
 									Duration = 2.5
 								})
 							else
@@ -5902,7 +5931,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Dragon Talon" ,
-							Icon = "http://www.roblox.com/asset/?id=16294367640",
+							Icon = "http://www.roblox.com/asset/?id=15435099885",
 							Duration = 2.5
 						})
 					end
@@ -6829,9 +6858,9 @@ spawn(function()
     pcall(function()
         while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
-                FrozenIsland:Set('✅: Frozen Dimension Spawning')
+                FrozenIsland:Set('âœ…: Frozen Dimension Spawning')
             else
-                FrozenIsland:Set('❌: Frozen Dimension Not Found')
+                FrozenIsland:Set('âŒ: Frozen Dimension Not Found')
             end
         end
     end)
@@ -7942,17 +7971,17 @@ end)
             while task.wait() do
                 pcall(function()
                     if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
-                        FM:Set("🌕: Full Moon 100%")
+                        FM:Set("ðŸŒ‘: Full Moon 100%")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
-                        FM:Set("🌔: Full Moon 75%")
+                        FM:Set("ðŸŒ’: Full Moon 75%")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
-                        FM:Set("🌓: Full Moon 50%")
+                        FM:Set("ðŸŒ“: Full Moon 50%")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
-                        FM:Set("🌒: Full Moon 25%")
+                        FM:Set("ðŸŒ”: Full Moon 25%")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
-                        FM:Set("🌒: Full Moon 15%")
+                        FM:Set("ðŸŒ–: Full Moon 15%")
                     else
-                        FM:Set("🌑: Wait For Moon")
+                        FM:Set("ðŸŒ•: Wait For Moon")
                     end
                 end)
             end
@@ -8744,9 +8773,9 @@ end)
 		while wait() do
 			pcall(function()
 				if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
-					Elite_Hunter_Status:Set("✅: Elite Spawn!")	
+					Elite_Hunter_Status:Set("âœ…: Elite Spawn!")	
 				else
-					Elite_Hunter_Status:Set("❌: Elite Not Spawn")	
+					Elite_Hunter_Status:Set("âŒ: Elite Not Spawn")	
 				end
 			end)
 		end
@@ -10057,7 +10086,7 @@ end)
 					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk2","Buy")
 				else
 					for i,v in pairs(game.Workspace:GetDescendants()) do
-						if v.Name == "Nexs" or v.Name == "Sead" or v.Name == "Appsxe" then
+						if v.Name == "Apple" or v.Name == "Banana" or v.Name == "Pineapple" then
 							v.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,1,10)
 							wait()
 							firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v.Handle,0)    
@@ -11554,9 +11583,9 @@ end
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 1') then
-    Island1:Set('✅: Island 1')
+    Island1:Set('âœ…: Island 1')
     else
-      Island1:Set('❌: Island 1' )end
+      Island1:Set('âŒ: Island 1' )end
             end
         end)
 end)
@@ -11565,9 +11594,9 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 2') then
-    Island2:Set('✅: Island 2')
+    Island2:Set('âœ…: Island 2')
     else
-      Island2:Set('❌: Island 2' )end
+      Island2:Set('âŒ: Island 2' )end
             end
         end)
 end)
@@ -11576,9 +11605,9 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 3') then
-    Island3:Set('✅: Island 3')
+    Island3:Set('âœ…: Island 3')
     else
-      Island3:Set('❌: Island 3' )end
+      Island3:Set('âŒ: Island 3' )end
             end
         end)
 end)
@@ -11587,9 +11616,9 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 4') then
-    Island4:Set('✅: Island 4')
+    Island4:Set('âœ…: Island 4')
     else
-      Island4:Set('❌: Island 4' )end
+      Island4:Set('âŒ: Island 4' )end
             end
         end)
 end)
@@ -11598,9 +11627,9 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 5') then
-    Island5:Set('✅: Island 5')
+    Island5:Set('âœ…: Island 5')
     else
-      Island5:Set('❌: Island 5' )end
+      Island5:Set('âŒ: Island 5' )end
             end
         end)
 end)
@@ -12537,7 +12566,7 @@ S:AddToggle("Auto Buy Abilities", false, function(t)
     end
 end)
 
-S:AddSeperator("Boats")
+S:AddSeperator("Ã¢â€ºÂµ Boats Ã¢â€ºÂµ")
 
 BoatList = {
     "Pirate Sloop",
@@ -12736,7 +12765,7 @@ end)
 
     ------------Bone------------------
     
-    S:AddSeperator("Bones")
+    S:AddSeperator("Ã°Å¸Â¦Â´ BonesÃ°Å¸Â¦Â´")
     
     S:AddButton("Buy Surprise [ $50 Bone ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
@@ -12744,7 +12773,7 @@ end)
     
     ------------Stat------------------
     
-    S:AddSeperator("Fragments")
+    S:AddSeperator("Ã°Å¸â€œÅ  Fragments Ã°Å¸â€œÅ ")
 
 S:AddButton("Reset Stats (Use 2.5K Fragments)", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","1")
@@ -12756,7 +12785,7 @@ S:AddButton("Random Race (Use 3K Fragments)", function()
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","2")
 end)
     --------------Accessories-----------------
-    	S:AddSeperator("Accessories")
+    	S:AddSeperator("Ã¢Å¡â„¢Ã¯Â¸Â Accessories Ã¢Å¡â„¢Ã¯Â¸Â")
 	S:AddButton("Black Cape [ $50,000 Beli ]",function()
 		local args = {
 			[1] = "BuyItem",
@@ -13466,7 +13495,7 @@ Misc:AddToggle("Graphic",false,function(v)
 			if RainbowYoru then
 				pcall(function()
 					for i,v in pairs(game.Players.LocalPlayer.Character.DarkBlade.Right:GetChildren()) do
-						if v.Name == "Xerus" or v.Name == "Hold" or v.Name == "Bottom" or v.Name == "Gems" or v.Name == "Wings" or v.Name == "Blade" or v.Name == "Tape" then
+						if v.Name == "Runes" or v.Name == "Hold" or v.Name == "Bottom" or v.Name == "Gems" or v.Name == "Wings" or v.Name == "Blade" or v.Name == "Tape" then
 							v.Color = Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
 							v.Material = "Neon"
 						end
@@ -13507,7 +13536,7 @@ Misc:AddToggle("Graphic",false,function(v)
 		end
 	end)
 
-    Misc:AddSeperator("Misc")
+    Misc:AddSeperator("Ã¢Å¡â„¢Ã¯Â¸Â Misc Ã¢Å¡â„¢Ã¯Â¸Â")
 
 Misc:AddToggle("Anti AFK", true, function()
 local vu = game:GetService("VirtualUser")
@@ -13793,7 +13822,7 @@ Misc:AddButton("Kaitun Cap", function(value)
 		thieunang.Parent = game:GetService("Players").LocalPlayer.PlayerGui.BubbleChat
 		thieunang.Position = UDim2.new(0,800,0.63,0)
 		local n = formatNumber(game.Players.LocalPlayer.Data.Fragments.Value)
-		thieunang.Text = "ÃƒÆ’Ã¢â‚¬ Ãƒ ¢Ã¢â€š ¬Ã¢â€ž ¢"..n
+		thieunang.Text = "ÃƒÆ’Ã¢â‚¬ ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢"..n
 		print("Done")
 		pcall(function() 
 			game:GetService("Players").LocalPlayer.PlayerGui.Main.MenuButton:Destroy()
