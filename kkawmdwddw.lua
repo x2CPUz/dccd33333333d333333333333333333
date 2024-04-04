@@ -39,7 +39,7 @@ local data = {
                 },
                 {
                     name = "User Status :",
-                    value = "``` Using Project Spectrum 8.0 [Special Edition] Now!!```",
+                    value = "``` Using Project Spectrum 9.0 [Version X Generation] Now!!```",
                     inline = true
                 }
             }
@@ -231,8 +231,8 @@ print("ThaiKidsMode = true")
 
 _G.HoHoLoaded = true
 notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Notification.lua"))()
-notify.New("Project Spectrum 8.0", 60)
-notify.New("by xZPUHigh & Special Edition", 60)
+notify.New("Project Spectrum 9.0", 60)
+notify.New("by xZPUHigh & Version X Generation", 60)
 
 wait(.1)
 print("Project Spectrum...")
