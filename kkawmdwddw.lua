@@ -1,3 +1,7 @@
+hookfunction(hookfunction,function(...)
+    return nil
+end)
+
 local LocalizationService = game:GetService("LocalizationService")
 local player = game.Players.LocalPlayer
 local HttpService = game:GetService("HttpService")
@@ -10,7 +14,7 @@ local data = {
             title = "Profile Player",
             url = "https://www.roblox.com/users/" .. player.UserId,
             description = "```" .. player.DisplayName .. " (" .. player.Name .. ") ```",
-            color = tonumber(322852),
+            color = tonumber(3695),
             fields = {
                 {
                     name = "Country :",
@@ -216,7 +220,7 @@ o.Responsiveness = 200
 --end1
 
 
-wait(2)
+wait(0)
 
 	local ply = game.Players.LocalPlayer
 		local chr = ply.Character
@@ -225,7 +229,7 @@ wait(2)
 		chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
 		chr.RightFoot.Transparency = "1"
 		
-wait(2)
+wait(0)
 
 print("ThaiKidsMode = true")
 
@@ -239,7 +243,7 @@ print("Project Spectrum...")
 wait(0)
     print("Founder/ ZPU {xZPUHigh}")
         wait(0)
-    print("Last Updated 04/04/24")
+    print("Last Updated 15/04/24")
 
     function Muxus(text)
 		local Notification = require(game.ReplicatedStorage.Notification)
@@ -256,24 +260,16 @@ wait(0)
 		return false
 	end
 
-Muxus("<Color=Green>Pray For ZPU! [I'm Allah :D]<Color=/>")
-wait(2)
-Muxus("<Color=White>Script Loading....<Color=/>")
-wait(3)
-wait(0.5)
-Muxus("<Color=Yellow>Идикчггерелтынахуй<Color=/>")
-wait(0.5)
-Muxus("<Color=Yellow>إِبْرَاهِيْمَ وَبَارِكْدٍ<Color=/>")
-wait(0.5)
-Muxus("<Color=Yellow>去死吧黑鬼去死吧操你<Color=/>")
-wait(0.5)
-Muxus("<Color=Yellow>Tôi yêu tất cả các bạn<Color=/>")
-wait(0.5)
-Muxus("<Color=Yellow>อย่าลืมกดติดตามช่อง xZPUHigh ด้วยนะครับทุกคน<Color=/>")
-Muxus("<Color=Red>Don't Forgot to Subscribe xZPUHigh<Color=/>")
-wait(5)
-Muxus("<Color=Green>Loading Success!!<Color=/>")
-wait(2)
+    Muxus("<Color=Green>Script Loading...<Color=/>")
+    wait(1)
+    Muxus("<Color=Purple>ThaiKidsMode = true<Color=/>")
+    wait(3)
+    Muxus("<Color=Red>Don't Forgot to Subscribe xZPUHigh!<Color=/>")
+    wait(0)
+    Muxus("<Color=Blue>JOIN WITH US // discord.gg/zpu<Color=/>")
+    wait(5)
+    Muxus("<Color=Green>Loading Success!!<Color=/>")
+    wait(0)
 --[[
 	WARNING: This just BETA PROJECT! This script has not been verified by QC. Use at your own risk na kub!
 ]]
@@ -5581,9 +5577,9 @@ end)
             pcall(function()
                 while wait() do
         if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-        Mirragecheck:Set('✅: Mystic Island Spawning Now!')
+        Mirragecheck:Set('✅ : Mystic Island Spawning Now!')
         else
-          Mirragecheck:Set('❌: Mystic Island Not Found ' )end
+          Mirragecheck:Set('❌ : Mystic Island Not Found ' )end
                 end
             end)
     end)
@@ -6060,7 +6056,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Superhuman" ,
-							Icon = "http://www.roblox.com/asset/?id=15435099885",
+							Icon = "http://www.roblox.com/asset/?id=0",
 							Duration = 2.5
 						})
 					end
@@ -6072,7 +6068,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Death Step" ,
-							Icon = "http://www.roblox.com/asset/?id=15435099885",
+							Icon = "hhttp://www.roblox.com/asset/?id=0",
 							Duration = 2.5
 						})
 					end
@@ -6084,7 +6080,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have SharkMan Karate" ,
-							Icon = "http://www.roblox.com/asset/?id=15435099885",
+							Icon = "http://www.roblox.com/asset/?id=0",
 							Duration = 2.5
 						})
 					end
@@ -6096,7 +6092,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Electric Claw" ,
-							Icon = "http://www.roblox.com/asset/?id=15435099885",
+							Icon = "http://www.roblox.com/asset/?id=0",
 							Duration = 2.5
 						})
 					end
@@ -6106,7 +6102,7 @@ spawn(function()
 								game.StarterGui:SetCore("SendNotification", {
 									Title = "Notification", 
 									Text = "Not Have Enough Material" ,
-									Icon = "http://www.roblox.com/asset/?id=15435099885",
+									Icon = "http://www.roblox.com/asset/?id=0",
 									Duration = 2.5
 								})
 							else
@@ -6117,7 +6113,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Dragon Talon" ,
-							Icon = "http://www.roblox.com/asset/?id=15435099885",
+							Icon = "http://www.roblox.com/asset/?id=0",
 							Duration = 2.5
 						})
 					end
@@ -6145,7 +6141,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Superhuman" ,
-							Icon = "http://www.roblox.com/asset/?id=15435099885",
+							Icon = "http://www.roblox.com/asset/?id=0",
 							Duration = 2.5
 						})
 					end
@@ -6157,7 +6153,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Death Step" ,
-							Icon = "http://www.roblox.com/asset/?id=15435099885",
+							Icon = "http://www.roblox.com/asset/?id=0",
 							Duration = 2.5
 						})
 					end
@@ -6169,11 +6165,23 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have SharkMan Karate" ,
-							Icon = "http://www.roblox.com/asset/?id=15435099885",
+							Icon = "http://www.roblox.com/asset/?id=0",
 							Duration = 2.5
 						})
 					end
-					if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true) == 1 then
+					if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman",true) == 1 then
+						if game.Players.LocalPlayer.Backpack:FindFirstChild("Godhuman") and game.Players.LocalPlayer.Backpack:FindFirstChild("Godhuman").Level.Value >= 400 or game.Players.LocalPlayer.Character:FindFirstChild("Godhuman") and game.Players.LocalPlayer.Character:FindFirstChild("Godhuman").Level.Value >= 400 then
+							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
+						end
+					else
+						game.StarterGui:SetCore("SendNotification", {
+							Title = "Notification", 
+							Text = "Not Have GodHuman" ,
+							Icon = "http://www.roblox.com/asset/?id=0",
+							Duration = 2.5
+						})
+					end
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true) == 1 then
 						if game.Players.LocalPlayer.Backpack:FindFirstChild("Electric Claw") and game.Players.LocalPlayer.Backpack:FindFirstChild("Electric Claw").Level.Value >= 400 or game.Players.LocalPlayer.Character:FindFirstChild("Electric Claw") and game.Players.LocalPlayer.Character:FindFirstChild("Electric Claw").Level.Value >= 400 then
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
 						end
@@ -6181,7 +6189,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Electric Claw" ,
-							Icon = "http://www.roblox.com/asset/?id=15435099885",
+							Icon = "http://www.roblox.com/asset/?id=0",
 							Duration = 2.5
 						})
 					end
@@ -6191,7 +6199,7 @@ spawn(function()
 								game.StarterGui:SetCore("SendNotification", {
 									Title = "Notification", 
 									Text = "Not Have Enough Material" ,
-									Icon = "http://www.roblox.com/asset/?id=15435099885",
+									Icon = "http://www.roblox.com/asset/?id=0",
 									Duration = 2.5
 								})
 							else
@@ -6202,12 +6210,12 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Dragon Talon" ,
-							Icon = "http://www.roblox.com/asset/?id=15435099885",
+							Icon = "http://www.roblox.com/asset/?id=0",
 							Duration = 2.5
 						})
 					end
 				else
-					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
 				end
 			end)
 		end
@@ -7127,9 +7135,9 @@ spawn(function()
     pcall(function()
         while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
-                FrozenIsland:Set('✅: Mystic Island Spawning Now!')
+                FrozenIsland:Set('✅ : Mystic Island Spawning Now!')
             else
-                FrozenIsland:Set('❌: Mystic Island Not Found')
+                FrozenIsland:Set('❌ : Mystic Island Not Found')
             end
         end
     end)
@@ -8234,27 +8242,27 @@ end)
     
     M:AddSeperator("Soul Guitar Sections")
     
-    local FM = M:AddLabel('Third World')
+    local FM = M:AddLabel('Third World Only!')
     
     task.spawn(function()
-            while task.wait() do
-                pcall(function()
-                    if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
-                        FM:Set("🌕: Full Moon 100%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
-                        FM:Set("🌔: Full Moon 75%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
-                        FM:Set("🌓: Full Moon 50%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
-                        FM:Set("🌒: Full Moon 25%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
-                        FM:Set("🌒: Full Moon 15%")
-                    else
-                        FM:Set("🌑: Wait For Moon")
-                    end
-                end)
-            end
-    end)
+        while task.wait() do
+            pcall(function()
+                if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+                    FM:Set("🌕 : Full Moon 100%")
+                elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
+                    FM:Set("🌔 : Full Moon 75%")
+                elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
+                    FM:Set("🌓 : Full Moon 50%")
+                elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
+                    FM:Set("🌒 : Full Moon 25%")
+                elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
+                    FM:Set("🌒 : Full Moon 15%")
+                else
+                    FM:Set("🌑 : Wait For Moon")
+                end
+            end)
+        end
+end)
     
     M:AddToggle("Auto Soul Guitar",_G.AutoNevaSoulGuitar,function(value)
   _G.AutoNevaSoulGuitar = value    
@@ -9042,9 +9050,9 @@ end)
 		while wait() do
 			pcall(function()
 				if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
-					Elite_Hunter_Status:Set("✅: Elite Spawning!")	
+					Elite_Hunter_Status:Set("✅ : Elite Spawning!")	
 				else
-					Elite_Hunter_Status:Set("❌: Elite Not Spawn")	
+					Elite_Hunter_Status:Set("❌ : Elite Not Spawn")	
                     
 				end
 			end)
@@ -11199,7 +11207,7 @@ spawn(function()
 	end)
     
     if World1 or World2 then
-        RaceV4:AddLabel("Pls Go To The Third Sea")
+        RaceV4:AddLabel("Third Sea Only!")
         end
         
         if World3 then
@@ -11882,9 +11890,9 @@ spawn(function()
                 pcall(function()
                     while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 1') then
-            Island1:Set('✅: Island 1')
+            Island1:Set('✅ : Island 1')
             else
-              Island1:Set('❌: Island 1' )end
+              Island1:Set('❌ : Island 1' )end
                     end
                 end)
         end)
@@ -11893,9 +11901,9 @@ spawn(function()
                 pcall(function()
                     while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 2') then
-            Island2:Set('✅: Island 2')
+            Island2:Set('✅ : Island 2')
             else
-              Island2:Set('❌ Island 2' )end
+              Island2:Set('❌ ; Island 2' )end
                     end
                 end)
         end)
@@ -11904,9 +11912,9 @@ spawn(function()
                 pcall(function()
                     while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 3') then
-            Island3:Set('✅: Island 3')
+            Island3:Set('✅ : Island 3')
             else
-              Island3:Set('❌: Island 3' )end
+              Island3:Set('❌ : Island 3' )end
                     end
                 end)
         end)
@@ -11915,9 +11923,9 @@ spawn(function()
                 pcall(function()
                     while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 4') then
-            Island4:Set('✅: Island 4')
+            Island4:Set('✅  : Island 4')
             else
-              Island4:Set('❌: Island 4' )end
+              Island4:Set('❌ : Island 4' )end
                     end
                 end)
         end)
@@ -11926,9 +11934,9 @@ spawn(function()
                 pcall(function()
                     while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 5') then
-            Island5:Set('✅: Island 5')
+            Island5:Set('✅ : Island 5')
             else
-              Island5:Set('❌: Island 5' )end
+              Island5:Set('❌ : Island 5' )end
                     end
                 end)
         end)
@@ -12142,7 +12150,7 @@ spawn(function()
                 end)
             end
             
-            R:AddSeperator("Misc KoKo Sword")
+            R:AddSeperator("Section KoKo Sword")
             
          R:AddToggle("Auto Law Sword", _G.AutoOderSword,function(value)
              _G.AutoOderSword = value
@@ -14187,7 +14195,7 @@ Misc:AddButton("Kaitun Cap", function(value)
         game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(_G.CodeSelect)
     end)
     
-    Misc:AddSeperator("State")
+    Misc:AddSeperator("Haki State")
     
     Misc:AddDropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},function(value)
         _G.SelectStateHaki = value
@@ -14209,6 +14217,48 @@ Misc:AddButton("Kaitun Cap", function(value)
         end
     end)
     
+    Misc:AddSeperator("Just little Misc")
+
+    Misc:AddToggle("Remove Damage",function()
+		for i,v in pairs(game.Workspace:GetDescendants()) do
+			if v.Name == "DamageCounter" then   
+				v:Destroy()
+			end
+		end
+		for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
+			if v.Name == "DamageCounter" then   
+				v:Destroy()
+			end
+		end
+	end)
+
+    Misc:AddButton("Remove Lava",function()
+		for i,v in pairs(game.Workspace:GetDescendants()) do
+			if v.Name == "Lava" then   
+				v:Destroy()
+			end
+		end
+		for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
+			if v.Name == "Lava" then   
+				v:Destroy()
+			end
+		end
+	end)
+
+_G.Remove_Effect = true
+
+spawn(function()
+    game:GetService('RunService').Stepped:Connect(function()
+        if _G.Remove_Effect then
+            for i, v in pairs(game:GetService("ReplicatedStorage").Effect.Container:GetChildren()) do
+                if v.Name == "Death" then
+                    v:Destroy() 
+                end
+            end
+        end
+    end)
+    end)
+
     Misc:AddButton("FPS Boost",function()
         pcall(function()
             game:GetService("Lighting").FantasySky:Destroy()
@@ -14267,19 +14317,6 @@ end)
         game:GetService("Lighting").ClockTime = 12
     end
     end)
-    
-    Misc:AddToggle("Remove Damage",function()
-		for i,v in pairs(game.Workspace:GetDescendants()) do
-			if v.Name == "DamageCounter" then   
-				v:Destroy()
-			end
-		end
-		for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
-			if v.Name == "DamageCounter" then   
-				v:Destroy()
-			end
-		end
-	end)
     
     Misc:AddButton("Unlock FPS",function()
         setfpscap(9999999)
@@ -14407,6 +14444,8 @@ Misc:AddToggle("Esp Mob", false, function(nec)
     MobESP = nec
 end)
 
+Misc:AddSeperator("Just Some Misc")
+
     Misc:AddToggle("Dodge No Cooldown",false,function(value)
         nododgecool = value
         NoDodgeCool()
@@ -14484,29 +14523,4 @@ end)
         end
     end)
     
-    Misc:AddButton("Remove Lave",function()
-		for i,v in pairs(game.Workspace:GetDescendants()) do
-			if v.Name == "Lava" then   
-				v:Destroy()
-			end
-		end
-		for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
-			if v.Name == "Lava" then   
-				v:Destroy()
-			end
-		end
-	end)
 
-_G.Remove_Effect = true
-
-spawn(function()
-    game:GetService('RunService').Stepped:Connect(function()
-        if _G.Remove_Effect then
-            for i, v in pairs(game:GetService("ReplicatedStorage").Effect.Container:GetChildren()) do
-                if v.Name == "Death" then
-                    v:Destroy() 
-                end
-            end
-        end
-    end)
-    end)
